@@ -2,11 +2,66 @@
 <html>
 	<head>
 		<meta charset="UTF-8">  
-        <title>Jeopardy</title>  
+        <title>Jeopardy</title> 
+        <link rel=stylesheet href="mainCss.css" type="text/css">
+        <style type="text/css">
+	        div.hidden {
+			    display: none;
+			}
+		</style>
+        <script type="text/javascript" ></script>
 	</head>
+
 	<body>
-		<h1>Welcome!</h>
+
+		<h1>Welcome!</h1>
 		<p>In this site you can create your own jeopardy game! Below, there is a submission form, where you can submit your questions for the game. You create three types of questions: short-answer, multiple choice, or true/false.</p>
+
+		<h2>Submission</h2>
+		
+		Select the type of question you would like to create:
+		<!-- Add in a drop down menu-->
+
+		<fieldset name="questionForm"> 
+			<div id="submission">
+				<!-- Make three different forms?-->
+				<form method="post" action="formHandler.php">
+					<!-- Need to figure out an vertical alignment-->
+					Question:
+					<input type="text">
+					
+					<div id="shortA">	
+						<label for="shortAnswer">Answer: </label>
+						<input type="text" name="shortAnswer">
+					</div>
+				</form>
+
+				<form method="post" action="formHandler.php">
+					<div id="multipleC" class="hidden">	
+						<label for="multipleChoice1">Answer Choice 1: </label>
+						<input type="text" name="multipleChoice1">
+						
+						<label for="multipleChoice2">Answer Choice 2:</label>
+						<input type="text" name="multipleChoice2">
+						
+						<label for="multipleChoice3">Answer Choice 3: </label>
+						<input type="text" name="multipleChoice3">
+
+						<label for="multipleChoice4">Answer Choice 4: </label>
+						<input type="text" name="multipleChoice4">
+					</div>
+				</form>
+
+				<form method="post" action="formHandler.php">
+					<div id="trueFalse" class="hidden">					
+						<input type="radio" name = "tfAnswer" value="true" checked>True
+						<input type="radio" name = "tfAnswer" value="false" >False
+						    </tr>
+						</div>
+				</form>
+			</div>
+		</fieldset>
+
 		
 	</body>
 </html>
