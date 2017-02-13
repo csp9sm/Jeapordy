@@ -5,23 +5,56 @@
         <title>Jeopardy</title> 
         <link rel=stylesheet href="mainCss.css" type="text/css">
         <style type="text/css">
-	        div.hidden {
+	        /*div.hidden {
 			    display: none;
-			}
+			}*/
 		</style>
-        <script type="text/javascript" ></script>
+        <script type="text/javascript" >
+        	function update_question(value){
+        		//alert(value);
+        		//if(document.getElementById("multiplechoice") == "shortanswer"){
+        		//	document.getElementById("multipleC").style.visibility = "visible";
+        		//}
+        		//alert(value);
+        		if(value == "shortanswer"){
+        			document.getElementById("shortA").style.visibility = "visible";
+        			document.getElementById("multipleC").style.visibility = "hidden";
+        			document.getElementById("trueFalse").style.visibility = "hidden";
+        		}
+        		else if(value == "multiplechoice"){
+        			document.getElementById("shortA").style.visibility = "hidden";
+        			document.getElementById("multipleC").style.visibility = "visible";
+        			document.getElementById("trueFalse").style.visibility = "hidden";
+        		}
+        		else{ 
+        			document.getElementById("shortA").style.visibility = "hidden";
+        			document.getElementById("multipleC").style.visibility = "hidden";
+        			document.getElementById("trueFalse").style.visibility = "visible";
+        		}
+
+        	}
+        </script>
 	</head>
 
 	<body>
 
 		<h1>Welcome!</h1>
-		<p>In this site you can create your own jeopardy game! Below, there is a submission form, where you can submit your questions for the game. You create three types of questions: short-answer, multiple choice, or true/false.</p>
+		<p>In this site you can create your own jeopardy game! Below, there is a submission form, where you can submit your questions and the corresponding answers for the game. You may create three types of questions: short-answer, multiple choice, or true/false.</p>
 
 		<h2>Submission</h2>
 		
-		Select the type of question you would like to create:
 		<!-- Add in a drop down menu-->
-
+		<fieldset name="questionType">
+			<legend style="font-size: 18px;">Select the type of question to create:</legend>
+			<div id="selectType"">
+				<select name="type"  onchange="update_question(this.value);">
+					<option value="shortanswer">Short Answer</option>
+					<option value="multiplechoice">Multiple Choice</option>
+					<option value="truefalse">True/False</option>
+				</select>
+			</div>
+		</fieldset>
+		<br />
 		<fieldset name="questionForm"> 
 			<div id="submission">
 				<!-- Make three different forms?-->
@@ -37,7 +70,8 @@
 				</form>
 
 				<form method="post" action="formHandler.php">
-					<div id="multipleC" class="hidden">	
+					<div id="multipleC" style="visibility: hidden;">
+					<!--multipleC contained 'class="hidden"'-->		
 						<label for="multipleChoice1">Answer Choice 1: </label>
 						<input type="text" name="multipleChoice1">
 						
@@ -53,7 +87,8 @@
 				</form>
 
 				<form method="post" action="formHandler.php">
-					<div id="trueFalse" class="hidden">					
+					<div id="trueFalse" style="visibility: hidden;">
+					<!--trueFalse contained 'class="hidden"'-->					
 						<input type="radio" name = "tfAnswer" value="true" checked>True
 						<input type="radio" name = "tfAnswer" value="false" >False
 						    </tr>
