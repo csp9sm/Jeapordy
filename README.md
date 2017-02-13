@@ -1,2 +1,2 @@
-# Jeapordy
-Creating a website a jeapordy game
+# Jeopardy
+Creating a website a Jeopardy game
