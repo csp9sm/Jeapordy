@@ -97,6 +97,7 @@
 	<body>
 
 		<h1>Welcome!</h1>
+		<p>Team: Cindy Park (csp9sm) and Sabina Yim (sjy8hy)</p>
 		<p>In this site you can create your own jeopardy game! Below, there is a submission form, where you can submit your questions and the corresponding answers for the game. You may create three types of questions: short-answer, multiple choice, or true/false.</p>
 
 		<h2>Submission</h2>
@@ -118,6 +119,8 @@
 				<!-- Make three different forms?-->
 				<form method="post" action="formHandler.php" name="shortAnswerForm" onsubmit="return validateInput1()">
 					<!-- Need to figure out an vertical alignment-->
+					<!-- Could add: !!(confirm('Do you really want to submit the form?') & 
+					along with validateInput1() to let user confirm input, but doesn't seem to work 100% -->
 					
 					<div id="shortA" style="display: block;">	
 						Question:
@@ -127,6 +130,7 @@
 						<input type="textarea" name="shortAnswer">
 						<br />
 						<input type="submit" value="Submit">
+						<input type="reset" value="Reset">
 					</div>
 				</form>
 
@@ -149,6 +153,7 @@
 						<input type="textarea" name="multipleChoice4">
 						<br />
 						<input type="submit" value="Submit">
+						<input type="reset" value="Reset">
 					</div>
 				</form>
 
@@ -161,6 +166,7 @@
 						<input type="radio" name = "tfAnswer" value="False" >False
 						<br />
 						<input type="submit" value="Submit">
+						<input type="reset" value="Reset">
 					</div>
 				</form>
 			</div>
