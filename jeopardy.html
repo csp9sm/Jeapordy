@@ -41,6 +41,56 @@
 					return(false);
 				}
 			}
+
+			function validateInput2(){
+        		// alert("Validating input!");
+        		var inputQuestion = document.multipleChoiceForm.question2;
+        		var inputMC1 = document.multipleChoiceForm.multipleChoice1;
+        		var inputMC2 = document.multipleChoiceForm.multipleChoice2;
+        		var inputMC3 = document.multipleChoiceForm.multipleChoice3;
+        		var inputMC4 = document.multipleChoiceForm.multipleChoice4;
+
+        		if(inputQuestion.value == ""){
+        			alert("You must enter a question!");
+        			//document.getElementById("pwd_msg").innerHTML = "Password must be entered";
+					document.multipleChoiceForm.question2.focus(); //focus in question so they know they have to fill it
+					return (false); //tells status that everything's fine, if false says not to proceed with form 
+				}
+				if(inputMC1.value == ""){
+					alert("You must enter a value for the first multiple choice answer choice!");
+					document.multipleChoiceForm.multipleChoice1.focus();
+					return(false);
+				}
+				if(inputMC2.value == ""){
+					alert("You must enter a value for the second multiple choice answer choice!");
+					document.multipleChoiceForm.multipleChoice2.focus();
+					return(false);
+				}
+				if(inputMC3.value == ""){
+					alert("You must enter a value for the third multiple choice answer choice!");
+					document.multipleChoiceForm.multipleChoice3.focus();
+					return(false);
+				}
+				if(inputMC4.value == ""){
+					alert("You must enter a value for the fourth multiple choice answer choice!");
+					document.multipleChoiceForm.multipleChoice4.focus();
+					return(false);
+				}
+			}
+
+			function validateInput3(){
+        		// alert("Validating input!");
+        		var inputQuestion = document.TrueFalseForm.question3;
+        		//var inputTF = document.TrueFalseForm.tfAnswer;
+        		if(inputQuestion.value == ""){
+        			alert("You must enter a question!");
+        			//document.getElementById("pwd_msg").innerHTML = "Password must be entered";
+					document.TrueFalseForm.question3.focus(); //focus in question so they know they have to fill it
+					return (false); //tells status that everything's fine, if false says not to proceed with form 
+				}
+			}
+
+			
         </script>
 	</head>
 
@@ -80,7 +130,7 @@
 					</div>
 				</form>
 
-				<form method="post" action="formHandler.php">
+				<form method="post" action="formHandler.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
 
 					<div id="multipleC" style="display: none;">	
 						Question:
@@ -102,7 +152,7 @@
 					</div>
 				</form>
 
-				<form method="post" action="formHandler.php">
+				<form method="post" action="formHandler.php" name=TrueFalseForm onsubmit="return validateInput3()">
 					<div id="trueFalse" style="display:none;">
 						Question:
 						<input type="textarea" name="question3">		
