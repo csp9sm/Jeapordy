@@ -51,38 +51,50 @@
 				<!-- Make three different forms?-->
 				<form method="post" action="formHandler.php">
 					<!-- Need to figure out an vertical alignment-->
-					Question:
-					<input type="text">
 					
 					<div id="shortA" style="display: block;">	
+						Question:
+						<input type="textarea" name="question1">
+						<br />
 						<label for="shortAnswer">Answer: </label>
-						<input type="text" name="shortAnswer">
+						<input type="textarea" name="shortAnswer">
+						<br />
+						<input type="submit" value="Submit">
 					</div>
 				</form>
 
 				<form method="post" action="formHandler.php">
+
 					<div id="multipleC" style="display: none;">	
+						Question:
+						<input type="textarea" name="question2">
+						
 						<label for="multipleChoice1">Answer Choice 1: </label>
-						<input type="text" name="multipleChoice1">
+						<input type="textarea" name="multipleChoice1">
 						
 						<label for="multipleChoice2">Answer Choice 2:</label>
-						<input type="text" name="multipleChoice2">
+						<input type="textarea" name="multipleChoice2">
 						
 						<label for="multipleChoice3">Answer Choice 3: </label>
-						<input type="text" name="multipleChoice3">
+						<input type="textarea" name="multipleChoice3">
 
 						<label for="multipleChoice4">Answer Choice 4: </label>
-						<input type="text" name="multipleChoice4">
+						<input type="textarea" name="multipleChoice4">
+						<br />
+						<input type="submit" value="Submit">
 					</div>
 				</form>
 
 				<form method="post" action="formHandler.php">
 					<div id="trueFalse" style="display:none;">
-					<!--trueFalse contained 'class="hidden"'-->					
-						<input type="radio" name = "tfAnswer" value="true" checked>True
-						<input type="radio" name = "tfAnswer" value="false" >False
-						    </tr>
-						</div>
+						Question:
+						<input type="textarea" name="question3">		
+
+						<input type="radio" name = "tfAnswer" value="True" checked>True
+						<input type="radio" name = "tfAnswer" value="False" >False
+						<br />
+						<input type="submit" value="Submit">
+					</div>
 				</form>
 			</div>
 		</fieldset>

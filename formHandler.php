@@ -15,60 +15,40 @@
       <td align="center"><string>Value</string></td>
     </tr>
     <tr>
-      <td width="20%">MAILTO</td> 
-      <td><?php echo $_POST['MAILTO']?></td>      
+      <td width="20%">Short Answer Question</td> 
+      <td><?php echo $_POST['question1']?></td>      
     </tr>
     <tr>
-      <td width="20%">FName</td> 
-      <td><?php echo $_POST['FName']?></td>      
+      <td width="20%">Short Answer</td> 
+      <td><?php echo $_POST['shortAnswer']?></td>       
     </tr>
     <tr>
-      <td width="20%">LName</td>
-      <td><?php echo $_POST['LName']?></td>      
+      <td width="20%">Multiple Choice Question</td> 
+      <td><?php echo $_POST['question2']?></td>      
     </tr>
     <tr>
-      <td width="20%">Major</td>
-      <td><?php echo $_POST['Major']?></td>      
+      <td width="20%">Multiple Choice Answer 1</td>
+      <td><?php echo $_POST['multipleChoice1']?></td>      
     </tr>
     <tr>
-      <td width="20%">OtherMajor</td>
-      <td><?php echo $_POST['OtherMajor']?></td>      
+      <td width="20%">Multiple Choice Answer 2</td>
+      <td><?php echo $_POST['multipleChoice2']?></td>      
     </tr>
     <tr>
-      <td width="20%">EmailAddress</td>
-      <td><?php echo $_POST['EmailAddress']?></td>      
+      <td width="20%">Multiple Choice Answer 3</td>
+      <td><?php echo $_POST['multipleChoice3']?></td>      
     </tr>
     <tr>
-      <td width="20%">Phone</td>
-      <td><?php echo $_POST['Phone']?></td>      
+      <td width="20%">Multiple Choice Answer 4</td>
+      <td><?php echo $_POST['multipleChoice4']?></td>      
     </tr>
     <tr>
-      <td width="20%">WebSiteURL</td>
-      <td><?php echo $_POST['WebSiteURL']?></td>      
+      <td width="20%">True/False Question</td> 
+      <td><?php echo $_POST['question3']?></td>      
     </tr>
     <tr>
-      <td width="20%">LevelHTML</td>
-      <td><?php echo $_POST['LevelHTML']?></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJava</td>
-      <td><?php echo $_POST['LevelJava']?></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJS</td>
-      <td><?php echo $_POST['LevelJS']?></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelServlets</td>
-      <td><?php echo $_POST['LevelServlets']?></td>      
-    </tr>
-    <tr>
-      <td width="20%">LevelJSP</td>
-      <td><?php echo $_POST['LevelJSP']?></td>      
-    </tr>
-    <tr>
-      <td width="20%">NewOrUpdate</td>
-      <td><?php echo $_POST['NewOrUpdate']?></td>      
+      <td width="20%">True/False Answer</td> 
+      <td><?php echo $_POST['tfAnswer']?></td>      
     </tr>
     <tr>
       <td width="20%">submit</td>
