@@ -24,6 +24,23 @@
         		}
 
         	}
+
+        	function validateInput1(){
+        		// alert("Validating input!");
+        		var inputQuestion = document.shortAnswerForm.question1;
+        		var inputShortAnswer = document.shortAnswerForm.shortAnswer;
+        		if(inputQuestion.value == ""){
+        			alert("You must enter a question!");
+        			//document.getElementById("pwd_msg").innerHTML = "Password must be entered";
+					document.shortAnswerForm.question1.focus(); //focus in question so they know they have to fill it
+					return (false); //tells status that everything's fine, if false says not to proceed with form 
+				}
+				if(inputShortAnswer.value == ""){
+					alert("You must enter an answer!");
+					document.shortAnswerForm.shortAnswer.focus();
+					return(false);
+				}
+			}
         </script>
 	</head>
 
@@ -49,7 +66,7 @@
 		<fieldset name="questionForm"> 
 			<div id="submission">
 				<!-- Make three different forms?-->
-				<form method="post" action="formHandler.php">
+				<form method="post" action="formHandler.php" name="shortAnswerForm" onsubmit="return validateInput1()">
 					<!-- Need to figure out an vertical alignment-->
 					
 					<div id="shortA" style="display: block;">	
