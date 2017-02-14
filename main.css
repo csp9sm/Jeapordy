@@ -9,5 +9,19 @@ body{
 	font-family: "Times New Roman", Times, serif;
 }
 h1{
-	font-size: 20px;
+	font-size: 32px;
+}
+
+h2.underline{
+	/*border-style: solid;*/
+    border-bottom: thick solid #2f46c6;
+}
+
+.center {
+margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+fieldset{
+	width:50%;
 }
