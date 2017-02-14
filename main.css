@@ -7,6 +7,13 @@ jeopardy.html
 
 body{
 	font-family: "Times New Roman", Times, serif;
+	background-image: url(images/lightblue.jpg);
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: top center !important;
+	background-repeat: no-repeat !important;
+	background-attachment: fixed;
 }
 h1{
 	font-size: 32px;
@@ -24,4 +31,13 @@ margin: auto;
 }
 fieldset{
 	width:50%;
+}
+
+#banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  display: block;
 }
