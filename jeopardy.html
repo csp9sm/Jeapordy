@@ -28,73 +28,75 @@
 			
 			<br />
 			 
-			<div id="submission">
-				<!-- Make three different forms?-->
-				<form method="post" action="formHandler.php" name="shortAnswerForm" onsubmit="return validateInput1()">
-					<!-- Need to figure out an vertical alignment-->
-					<!-- Could add: !!(confirm('Do you really want to submit the form?') & 
-					along with validateInput1() to let user confirm input, but doesn't seem to work 100% -->
-					
-					<div id="shortA" style="display: block;">	
-						Question:
-						<input type="textarea" name="question1">
-						<br />
-						<label for="shortAnswer">Answer: </label>
-						<input type="textarea" name="shortAnswer">
-						<br />
-						<input type="submit" value="Submit">
-						<input type="reset" value="Reset">
-					</div>
-				</form>
+			<form method="post" action="formHandler.php" name="shortAnswerForm" onsubmit="return validateInput1()">
+				
+				<div id="shortA">	
+					<table class="center">
+						<tr>
+							<td><label for="question1">Question: </label></td>
+							<td><input type="textarea" name="question1"></td>
+						</tr>
+						<tr>
+							<td><label for="shortAnswer">Answer: </label></td>
+							<td><input type="textarea" name="shortAnswer"></td>
+						</tr>		
+					</table>
+					<br/>
+					<input type="submit" value="Submit">
+					<input type="reset" value="Reset">
+				</div>
+			</form>
 
-				<form method="post" action="formHandler.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
+			<form method="post" action="formHandler.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
 
-					<div id="multipleC" style="display: none;">					
-						<table>
-							<tr>
-								<td>Question:</td>
-								<td><input type="textarea" name="question2"></td>
-							</tr>
-							<tr>
-								<td><label for="multipleChoice1">Answer Choice 1: </label></td>
-								<td><input type="textarea" name="multipleChoice1"></td>
-							</tr>
-							<tr>
-								<td><label for="multipleChoice2">Answer Choice 2:</label></td>
-								<td><input type="textarea" name="multipleChoice2"></td>
-							</tr>
-							<tr>
-								<td><label for="multipleChoice3">Answer Choice 3: </label></td>
-								<td><input type="textarea" name="multipleChoice3"></td>
-							</tr>
-							<tr>
-								<td><label for="multipleChoice4">Answer Choice 4: </label></td>
-								<td><input type="textarea" name="multipleChoice4"></td>
-							</tr>
-						</table>	
-						
-						<input type="submit" value="Submit">
-						<input type="reset" value="Reset">
-					</div>
-				</form>
+				<div id="multipleC" style="display: none;">					
+					<table class="center">
+						<tr>
+							<td><label for="question2">Question: </label></td>
+							<td><input type="textarea" name="question2"></td>
+						</tr>
+						<tr>
+							<td><label for="multipleChoice1">Answer Choice 1: </label></td>
+							<td><input type="textarea" name="multipleChoice1"></td>
+						</tr>
+						<tr>
+							<td><label for="multipleChoice2">Answer Choice 2:</label></td>
+							<td><input type="textarea" name="multipleChoice2"></td>
+						</tr>
+						<tr>
+							<td><label for="multipleChoice3">Answer Choice 3: </label></td>
+							<td><input type="textarea" name="multipleChoice3"></td>
+						</tr>
+						<tr>
+							<td><label for="multipleChoice4">Answer Choice 4: </label></td>
+							<td><input type="textarea" name="multipleChoice4"></td>
+						</tr>
+					</table>	
+					<br />
+					<input type="submit" value="Submit">
+					<input type="reset" value="Reset">
+				</div>
+			</form>
 
-				<form method="post" action="formHandler.php" name=TrueFalseForm onsubmit="return validateInput3()">
-					<div id="trueFalse" style="display:none;">
-						Question:
-						<input type="textarea" name="question3">		
-						<br />
-						<br />
-						<input type="radio" name = "tfAnswer" value="True" checked>True
-						<input type="radio" name = "tfAnswer" value="False" >False
-						<br />
-						<br />
-						<input type="submit" value="Submit">
-						<input type="reset" value="Reset">
-					</div>
-				</form>
+			<form method="post" action="formHandler.php" name=TrueFalseForm onsubmit="return validateInput3()">
+				<div id="trueFalse" style="display:none;">
+					Question:
+					<input type="textarea" name="question3">		
+					<br />
+					<br />
+					<input type="radio" name = "tfAnswer" value="True" checked>True
+					<input type="radio" name = "tfAnswer" value="False" >False
+					<br />
+					<br />
+					<input type="submit" value="Submit">
+					<input type="reset" value="Reset">
+				</div>
+			</form>
 
-			</fieldset>
+		</fieldset>
 		
-		<p>Team: Cindy Park (csp9sm) and Sabina Yim (sjy8hy)</p>
+    <div>Team: Cindy Park (csp9sm) and Sabina Yim (sjy8hy)</div>
+</div>
+
 	</body>
 </html>
