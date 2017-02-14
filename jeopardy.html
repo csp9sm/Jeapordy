@@ -14,13 +14,13 @@
         		}
         		else if(value == "multiplechoice"){
         			document.getElementById("shortA").style.display ="none";
-        			document.getElementById("multipleC").style.display ="inline";
+        			document.getElementById("multipleC").style.display ="block";
         			document.getElementById("trueFalse").style.display ="none";
         		}
         		else{ 
         			document.getElementById("shortA").style.display ="none";
         			document.getElementById("multipleC").style.display ="none";
-        			document.getElementById("trueFalse").style.display ="inline";
+        			document.getElementById("trueFalse").style.display ="block";
         		}
 
         	}
@@ -135,7 +135,7 @@
 					<div id="multipleC" style="display: none;">	
 						Question:
 						<input type="textarea" name="question2">
-						
+						<br />
 						<label for="multipleChoice1">Answer Choice 1: </label>
 						<input type="textarea" name="multipleChoice1">
 						
@@ -156,7 +156,7 @@
 					<div id="trueFalse" style="display:none;">
 						Question:
 						<input type="textarea" name="question3">		
-
+						<br />
 						<input type="radio" name = "tfAnswer" value="True" checked>True
 						<input type="radio" name = "tfAnswer" value="False" >False
 						<br />
