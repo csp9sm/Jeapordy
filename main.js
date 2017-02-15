@@ -88,11 +88,6 @@ function validateInput3(){
 	}
 	alert("Thank you for submitting!");
 	return true;
+
 }
-
-
-// function thanksMessage() {
-//     alert("Thank you for submitting!");
-//     return true;
-//}
 

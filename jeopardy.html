@@ -29,17 +29,17 @@
 			
 			<br />
 			 
-			<form method="post" action="formHandler.php" name="shortAnswerForm" onsubmit="return validateInput1()">
+			<form method="post" action="formHandler.php" name="shortAnswerForm" id="shortAnswerForm" onsubmit="return validateInput1()">
 				
 				<div id="shortA">	
 					<table class="center">
 						<tr>
 							<td><label for="question1">Question: </label></td>
-							<td><input type="textarea" name="question1"></td>
+							<td><input type="text" name="question1"></td>
 						</tr>
 						<tr>
 							<td><label for="shortAnswer">Answer: </label></td>
-							<td><input type="textarea" name="shortAnswer"></td>
+							<td><textarea name="shortAnswer" form="shortAnswerForm" row="10" cols="18"></textarea></td>
 						</tr>		
 					</table>
 					<br/>
@@ -47,6 +47,7 @@
 					<input type="reset" value="Reset">
 				</div>
 			</form>
+<!-- 			<textarea type="text" name="shortAnswer" form="shortAnswerForm" rows="30" columns="50">Enter text here...</textarea> -->
 
 			<form method="post" action="formHandler.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
 
@@ -54,25 +55,33 @@
 					<table class="center">
 						<tr>
 							<td><label for="question2">Question: </label></td>
-							<td><input type="textarea" name="question2"></td>
+							<td><input type="text" name="question2"></td>
 						</tr>
 						<tr>
-							<td><label for="multipleChoice1">Answer Choice 1: </label></td>
-							<td><input type="textarea" name="multipleChoice1"></td>
+							<td><label for="multipleChoice1">Answer Choice A: </label></td>
+							<td><input type="text" name="multipleChoice1"></td>
 						</tr>
 						<tr>
-							<td><label for="multipleChoice2">Answer Choice 2:</label></td>
-							<td><input type="textarea" name="multipleChoice2"></td>
+							<td><label for="multipleChoice2">Answer Choice B:</label></td>
+							<td><input type="text" name="multipleChoice2"></td>
 						</tr>
 						<tr>
-							<td><label for="multipleChoice3">Answer Choice 3: </label></td>
-							<td><input type="textarea" name="multipleChoice3"></td>
+							<td><label for="multipleChoice3">Answer Choice C: </label></td>
+							<td><input type="text" name="multipleChoice3"></td>
 						</tr>
 						<tr>
-							<td><label for="multipleChoice4">Answer Choice 4: </label></td>
-							<td><input type="textarea" name="multipleChoice4"></td>
+							<td><label for="multipleChoice4">Answer Choice D: </label></td>
+							<td><input type="text" name="multipleChoice4"></td>
 						</tr>
-					</table>	
+					</table>
+					<p>Please select the correct answer choice.</p>
+					<select name="mcChoice">
+							<option value="Multiple Choice Answer A">Multiple Choice Answer A</option>
+							<option value="Multiple Choice Answer B">Multiple Choice Answer B</option>
+							<option value="Multiple Choice Answer C">Multiple Choice Answer </option>
+							<option value="Multiple Choice Answer D">Multiple Choice Answer D</option>
+					</select>	
+					<br /> 
 					<br />
 					<input type="submit" value="Submit">
 					<input type="reset" value="Reset">
