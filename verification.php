@@ -8,6 +8,10 @@
 	</head>
 
 	<body>
+		<?php 
+			// Will be passing the form elements value: Either back to the jeopardyForm submission page or to the formHandler that will send it to the txt file to save the question. 
+			
+		?>
 		<header><img id="banner" src="images/jeopardy_logo1.png" alt="Jeopardy Logo Banner"/></header>
 		<div class="center">
 			<h1>Verification: </h1>
@@ -19,7 +23,7 @@
 		</div>
 		
 		<fieldset name="questionType" class="center">
-			<legend align="center" style="font-size: 18px;">Select the type of question to create:</legend>
+			<!-- <legend align="center" style="font-size: 18px;">Select the type of question to create:</legend> -->
 			<table class="center">
 				<tr>
 					<td><label for="question1">Question: </label></td>
@@ -31,6 +35,8 @@
 				</tr>		
 			</table>
 			
+			<input type=button value="Go Back"></input>
+			<input type=button value="Submit"></input>
 
 		</fieldset>
 		<img class="imgbanner" src="images/podiums.png" alt="Podium"/>
