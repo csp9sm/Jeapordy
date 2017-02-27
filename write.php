@@ -1,4 +1,7 @@
 <?php
+	header("Location:/cs4640/project/Jeopardy/jeopardyForm.php");
+	//should redirect to form page
+	
 	// session_start();
 	// $_SESSION['questionType'] = $_SESSION['questionType'];
 	// $_SESSION['Question']= $_SESSION['Question'];
