@@ -88,7 +88,7 @@
 					<select name="mcChoice">
 							<option value="Multiple Choice Answer A">Multiple Choice Answer A</option>
 							<option value="Multiple Choice Answer B">Multiple Choice Answer B</option>
-							<option value="Multiple Choice Answer C">Multiple Choice Answer </option>
+							<option value="Multiple Choice Answer C">Multiple Choice Answer C</option>
 							<option value="Multiple Choice Answer D">Multiple Choice Answer D</option>
 					</select>	
 					<br /> 

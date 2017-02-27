@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$questionType="";
 	$_SESSION['Question']="";
 	$_SESSION['Answer'] = array();
 	$_SESSION['post-data'] = $_POST;
@@ -12,20 +13,23 @@
 		}else{
 			// echo $_SESSION['post-data'][$i]; 
 			if($key == 'question2') {
+				$questionType="Multiple Choice";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
-				$_SESSION['Answer']['A'] = $_SESSION['post-data']['multipleChoice1']; 
-				$_SESSION['Answer']['B'] = $_SESSION['post-data']['multipleChoice2']; 
-				$_SESSION['Answer']['C'] = $_SESSION['post-data']['multipleChoice3']; 
-				$_SESSION['Answer']['D'] = $_SESSION['post-data']['multipleChoice4']; 
-				$_SESSION['Answer']['Correct Answer'] = $_SESSION['post-data']['mcChoice'];
+				$_SESSION['Answer']['A:'] = $_SESSION['post-data']['multipleChoice1']; 
+				$_SESSION['Answer']['B:'] = $_SESSION['post-data']['multipleChoice2']; 
+				$_SESSION['Answer']['C:'] = $_SESSION['post-data']['multipleChoice3']; 
+				$_SESSION['Answer']['D:'] = $_SESSION['post-data']['multipleChoice4']; 
+				$_SESSION['Answer']['Correct Answer:'] = $_SESSION['post-data']['mcChoice'];
 			}
 			if($key == 'question1'){
+				$questionType="Short Answer";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
-				$_SESSION['Answer']['A'] = $_SESSION['Answer']['A']= $_SESSION['post-data']['shortAnswer'];
+				$_SESSION['Answer'][''] = $_SESSION['post-data']['shortAnswer'];
 			}	
 			if($key == 'question3'){
+				$questionType="True and False";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
-				$_SESSION['Answer']['A'] = $_SESSION['Answer']['A']= $_SESSION['post-data']['tfAnswer'];
+				$_SESSION['Answer'][''] = $_SESSION['post-data']['tfAnswer'];
 			}	
 
 		}
@@ -60,16 +64,22 @@
 			<!-- <legend align="center" style="font-size: 18px;">Select the type of question to create:</legend> -->
 			<table class="center">
 				<tr>
-					<td><label for="question1">Question: </label></td>
+					<td><strong>Question Type:</strong></td>
+					<td><?php echo $questionType; ?></td>
+				</tr>
+				<tr>
+					<td><label for="question1"><strong>Question: </strong></label></td>
 					<td><?php echo $_SESSION['Question']; ?></td>
 				</tr>
 				<tr>
-					<td><label for="shortAnswer">Answer: </label></td>
+					<td><label for="shortAnswer"><strong>Answer: </strong></label></td>
 					<td><?php 
+						echo "<table>";
 						foreach($_SESSION['Answer'] as $key => $value)
-						{
-    						echo $value;
+						{	
+							echo"<tr> <td>" . $key ."</td> <td>" . $value . "</td> </tr>";
 						}
+						echo "</table>";
 						?></td>
 				</tr>		
 			</table>
