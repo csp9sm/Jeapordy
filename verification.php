@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 	session_start();
 	$_SESSION['questionType']="";
@@ -39,7 +37,6 @@
 	$ansLength = count($_SESSION['Answer']);
 
 ?>
->>>>>>> 74aa285d33c58ac615cbd1294818b6bd72bb281f
 <!doctype html>
 <html>
 	<head>
@@ -88,8 +85,19 @@
 				</tr>	
 			</table>
 			
-			<input type=button value="Go Back" onclick="history.go(-1);"></input>
-			<input type=submit value="Submit" onclick="write.php"></input>
+			<input type=button value="Go Back" onclick="history.go(-1);" data-rel="back"></input>
+			<form method="post" action="write.php" name="multipleChoiceForm">
+				<input type="hidden" name="typeToWrite" value="<?php echo $_SESSION['questionType']; ?>">
+				<input type="hidden" name="questionToWrite" value="<?php echo $_SESSION['Question']; ?>">
+				<?php
+					foreach($_SESSION['Answer'] as $key => $value)
+					{
+						echo '<input type="hidden" name="answerToWrite['.$key.']" value="'. $value. '">';
+					}
+
+				?>
+				<!-- <input type="hidden" name="answerToWrite" value="<?php echo $_SESSION['Answer']; ?>"> -->
+			<input type=submit value="Submit"></input>
 
 
 		</fieldset>
