@@ -1,3 +1,45 @@
+<<<<<<< HEAD
+=======
+<?php
+	session_start();
+	$_SESSION['questionType']="";
+	$_SESSION['Question']="";
+	$_SESSION['Answer'] = array();
+	$_SESSION['post-data'] = $_POST;
+	$_SESSION['keyList'] = array_keys($_POST);
+	$arrayLength = count($_SESSION['post-data']);
+	foreach($_SESSION['post-data'] as $key => $value){	
+
+		if(isset($_SESSION['post-data'][$key]) == 0){
+			$_SESSION['post-data'][$key] = "";
+		}else{
+			// echo $_SESSION['post-data'][$i]; 
+			if($key == 'question2') {
+				$_SESSION['questionType']="Multiple Choice";
+				$_SESSION['Question'] = $_SESSION['post-data'][$key];
+				$_SESSION['Answer']['A:'] = $_SESSION['post-data']['multipleChoice1']; 
+				$_SESSION['Answer']['B:'] = $_SESSION['post-data']['multipleChoice2']; 
+				$_SESSION['Answer']['C:'] = $_SESSION['post-data']['multipleChoice3']; 
+				$_SESSION['Answer']['D:'] = $_SESSION['post-data']['multipleChoice4']; 
+				$_SESSION['Answer']['Correct Answer:'] = $_SESSION['post-data']['mcChoice'];
+			}
+			if($key == 'question1'){
+				$_SESSION['questionType']="Short Answer";
+				$_SESSION['Question'] = $_SESSION['post-data'][$key];
+				$_SESSION['Answer'][''] = $_SESSION['post-data']['shortAnswer'];
+			}	
+			if($key == 'question3'){
+				$_SESSION['questionType']="True and False";
+				$_SESSION['Question'] = $_SESSION['post-data'][$key];
+				$_SESSION['Answer'][''] = $_SESSION['post-data']['tfAnswer'];
+			}	
+
+		}
+	}
+	$ansLength = count($_SESSION['Answer']);
+
+?>
+>>>>>>> 74aa285d33c58ac615cbd1294818b6bd72bb281f
 <!doctype html>
 <html>
 	<head>
@@ -26,36 +68,29 @@
 			<!-- <legend align="center" style="font-size: 18px;">Select the type of question to create:</legend> -->
 			<table class="center">
 				<tr>
-					<td><label for="question1">Question: </label></td>
-					<td><?php echo "Submitted Quesiton"?></td>
+					<td><strong>Question Type:</strong></td>
+					<td><?php echo $_SESSION['questionType']; ?></td>
 				</tr>
 				<tr>
-					<td><label for="shortAnswer">Answer: </label></td>
-					<td><?php echo "Submitted Answer" ?></td>
-				</tr>		
+					<td><label for="question1"><strong>Question: </strong></label></td>
+					<td><?php echo $_SESSION['Question']; ?></td>
+				</tr>
+				<tr>
+					<td><label for="shortAnswer"><strong>Answer: </strong></label></td>
+					<td><?php 
+						echo "<table>";
+						foreach($_SESSION['Answer'] as $key => $value)
+						{	
+							echo"<tr> <td>" . $key ."</td> <td>" . $value . "</td> </tr>";
+						}
+						echo "</table>";
+						?></td>
+				</tr>	
 			</table>
 			
 			<input type=button value="Go Back" onclick="history.go(-1);"></input>
-			<input type=button value="Submit"></input>
+			<input type=submit value="Submit" onclick="write.php"></input>
 
-			<?php 
-				$str = "";
-				$key = "hello";
-				$value = "goodbye";
-				$str = "key: ".$key.", value: ".$value."n";
-				// echo $_SERVER['DOCUMENT_ROOT']; // /Applications/XAMPP/xamppfiles/htdocs
-				$filename = "/Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy/data/data.txt";
-				// chmod($filename, 775);
-				if (!empty($str)) {
-					$file = fopen($filename, "a");
-					fputs($file, $str);
-					fclose($file);
-				}
-				// echo $str
-				// foreach($_SESSION['post-data'] as $key->$value){
-				// 	$str = "key: ".$key;."\nvalue: ".$value;
-				// }
-			?>
 
 		</fieldset>
 		<img class="imgbanner" src="images/podiums.png" alt="Podium"/>
