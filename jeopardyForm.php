@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	 // if(isset($_POST['textarea1'])){
+  //       $_SESSION['textarea1'] = $_POST['textarea1'];
+  //   }
+
+?>
 <!doctype html>
 <html>
 	<head>
@@ -8,6 +15,9 @@
 	</head>
 
 	<body>
+		<?php 
+			//This is to ensure that if the information passed from the verification is filled in the inputs.
+		?>
 		<header><img id="banner" src="images/jeopardy_logo1.png" alt="Jeopardy Logo Banner"/></header>
 		<div class="center">
 			<h1>Welcome!</h1>
@@ -78,7 +88,7 @@
 					<select name="mcChoice">
 							<option value="Multiple Choice Answer A">Multiple Choice Answer A</option>
 							<option value="Multiple Choice Answer B">Multiple Choice Answer B</option>
-							<option value="Multiple Choice Answer C">Multiple Choice Answer </option>
+							<option value="Multiple Choice Answer C">Multiple Choice Answer C</option>
 							<option value="Multiple Choice Answer D">Multiple Choice Answer D</option>
 					</select>	
 					<br /> 
