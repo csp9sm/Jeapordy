@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$_SESSION['post-data'] = $_SESSION['post-data'];
 	 // if(isset($_POST['textarea1'])){
   //       $_SESSION['textarea1'] = $_POST['textarea1'];
   //   }
