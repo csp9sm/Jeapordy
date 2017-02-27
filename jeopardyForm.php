@@ -29,7 +29,7 @@
 			
 			<br />
 			 
-			<form method="post" action="formHandler.php" name="shortAnswerForm" id="shortAnswerForm" onsubmit="return validateInput1()">
+			<form method="post" action="verification.php" name="shortAnswerForm" id="shortAnswerForm" onsubmit="return validateInput1()">
 				
 				<div id="shortA">	
 					<table class="center">
@@ -49,7 +49,7 @@
 			</form>
 <!-- 			<textarea type="text" name="shortAnswer" form="shortAnswerForm" rows="30" columns="50">Enter text here...</textarea> -->
 
-			<form method="post" action="formHandler.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
+			<form method="post" action="verification.php" name="multipleChoiceForm" onsubmit="return validateInput2()">
 
 				<div id="multipleC" style="display: none;">					
 					<table class="center">
@@ -88,7 +88,7 @@
 				</div>
 			</form>
 
-			<form method="post" action="formHandler.php" name=TrueFalseForm onsubmit="return validateInput3()">
+			<form method="post" action="verification.php" name=TrueFalseForm onsubmit="return validateInput3()">
 				<div id="trueFalse" style="display:none;">
 					<label for="question3">Question: </label>
 					<input type="textarea" name="question3">		

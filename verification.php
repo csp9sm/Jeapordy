@@ -35,7 +35,7 @@
 				</tr>		
 			</table>
 			
-			<input type=button value="Go Back"></input>
+			<input type=button value="Go Back" onclick="history.go(-1);"></input>
 			<input type=button value="Submit"></input>
 
 		</fieldset>
