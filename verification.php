@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$questionType="";
+	$_SESSION['questionType']="";
 	$_SESSION['Question']="";
 	$_SESSION['Answer'] = array();
 	$_SESSION['post-data'] = $_POST;
@@ -13,7 +13,7 @@
 		}else{
 			// echo $_SESSION['post-data'][$i]; 
 			if($key == 'question2') {
-				$questionType="Multiple Choice";
+				$_SESSION['questionType']="Multiple Choice";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer']['A:'] = $_SESSION['post-data']['multipleChoice1']; 
 				$_SESSION['Answer']['B:'] = $_SESSION['post-data']['multipleChoice2']; 
@@ -22,12 +22,12 @@
 				$_SESSION['Answer']['Correct Answer:'] = $_SESSION['post-data']['mcChoice'];
 			}
 			if($key == 'question1'){
-				$questionType="Short Answer";
+				$_SESSION['questionType']="Short Answer";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer'][''] = $_SESSION['post-data']['shortAnswer'];
 			}	
 			if($key == 'question3'){
-				$questionType="True and False";
+				$_SESSION['questionType']="True and False";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer'][''] = $_SESSION['post-data']['tfAnswer'];
 			}	
@@ -65,7 +65,7 @@
 			<table class="center">
 				<tr>
 					<td><strong>Question Type:</strong></td>
-					<td><?php echo $questionType; ?></td>
+					<td><?php echo $_SESSION['questionType']; ?></td>
 				</tr>
 				<tr>
 					<td><label for="question1"><strong>Question: </strong></label></td>
@@ -85,7 +85,7 @@
 			</table>
 			
 			<input type=button value="Go Back" onclick="history.go(-1);"></input>
-			<input type=button value="Submit"></input>
+			<input type=submit value="Submit" onclick="write.php"></input>
 
 		</fieldset>
 		<img class="imgbanner" src="images/podiums.png" alt="Podium"/>
