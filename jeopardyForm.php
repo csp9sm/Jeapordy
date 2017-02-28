@@ -8,7 +8,7 @@
 		$_SESSION['post-data'] = $_SESSION['post-data'];
 		$_SESSION['questionType']= $_SESSION['questionType'];
 		$questionType = $_SESSION['questionType2'];
-		echo $questionType;
+		//echo $questionType;
 	}else{
 		$previous = "";
 		$questionType = "shortanswer";
@@ -30,26 +30,30 @@
         <script type="text/javascript" src="main.js"></script>
         <script type="text/javascript">
         	function checkFields (){
-        		alert("check fields!");
+        		//alert("check fields!");
         		//alert(document.questionType.type.value);
         		var myQuestion = "<?php echo $questionType; ?>";
         		alert(myQuestion);
         		//alert(document.TrueFalseForm.question3.value);
         		//function update_question(<?php echo $questionType; ?>);
-        		if((myQuestion== "shortanswer") && (document.shortAnswerForm.question1.value != "")){
+
+        		//if((myQuestion== "shortanswer") && (document.shortAnswerForm.question1.value != "")){
+        		if(myQuestion== "shortanswer"){
         			document.getElementById("shortA").style.display ="block";
-        			document.getElementById("multipleC").style.display ="hidden";
-        			document.getElementById("trueFalse").style.display ="hidden";	
+        			document.getElementById("multipleC").style.display ="none";
+        			document.getElementById("trueFalse").style.display ="none";	
         		}
-        		if((myQuestion == "multiplechoice") && (document.multipleChoiceForm.question2.value != "")){
+        		//if((myQuestion == "multiplechoice") && (document.multipleChoiceForm.question2.value != "")){
+        		if(myQuestion== "multiplechoice"){
         			document.getElementById("multipleC").style.display ="block";
-        			document.getElementById("shortA").style.display ="hidden";
-        			document.getElementById("trueFalse").style.display ="hidden";	
+        			document.getElementById("shortA").style.display ="none";
+        			document.getElementById("trueFalse").style.display ="none";	
         		}
-        		if((myQuestion == "truefalse") && (document.TrueFalseForm.question3.value != "")){
+        		//if((myQuestion == "truefalse") && (document.TrueFalseForm.question3.value != "")){
+        		if(myQuestion== "truefalse"){
         			document.getElementById("trueFalse").style.display ="block";	
-        			document.getElementById("multipleC").style.display ="hidden";
-        			document.getElementById("shortA").style.display ="hidden";
+        			document.getElementById("multipleC").style.display ="none";
+        			document.getElementById("shortA").style.display ="none";
         		}
         	}
         </script>
@@ -72,7 +76,7 @@
 		<fieldset name="questionType" class="center">
 			<legend align="center" style="font-size: 18px;">Select the type of question to create:</legend>
 			<div id="selectType">
-				<select name="type"  onchange="update_question(this.value);">
+				<select name="type"  onchange="update_question(this.value);" value="<?php echo $questionType ?>">
 					<!--value = "<?php echo $questionType; ?>"-->
 					<option value="shortanswer">Short Answer</option>
 					<option value="multiplechoice">Multiple Choice</option>

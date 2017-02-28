@@ -34,7 +34,7 @@ function validateInput1(){
 		document.shortAnswerForm.shortAnswer.focus();
 		return(false);
 	}
-	alert("Thank you for submitting!");
+	//alert("Thank you for submitting!");
 	return true;
 }
 
@@ -72,7 +72,7 @@ function validateInput2(){
 		document.multipleChoiceForm.multipleChoice4.focus();
 		return(false);
 	}
-	alert("Thank you for submitting!");
+	//alert("Thank you for submitting!");
 	return true;
 }
 
@@ -86,7 +86,7 @@ function validateInput3(){
 		document.TrueFalseForm.question3.focus(); //focus in question so they know they have to fill it
 		return (false); //tells status that everything's fine, if false says not to proceed with form 
 	}
-	alert("Thank you for submitting!");
+	//alert("Thank you for submitting!");
 	return true;
 
 }

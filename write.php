@@ -1,5 +1,6 @@
 <?php
 	header("Location:jeopardyForm.php");
+	$_SESSION['website'] = "write.php";
 	// /Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy/
 	// in public_html, have to change to "jeopardyForm.php"
 	//should redirect to form page

@@ -91,7 +91,7 @@
 			</table>
 			
 			<input type=button value="Go Back" onclick="history.go(-1);" data-rel="back"></input>
-			<form method="post" action="write.php" name="multipleChoiceForm">
+			<form method="post" action="write.php" name="writingForm" onsubmit="alert('Thank you for submitting!');">
 				<input type="hidden" name="typeToWrite" value="<?php echo $_SESSION['questionType']; ?>">
 				<input type="hidden" name="questionToWrite" value="<?php echo $_SESSION['Question']; ?>">
 				<?php
