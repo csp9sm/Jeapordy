@@ -33,7 +33,7 @@
         		//alert("check fields!");
         		//alert(document.questionType.type.value);
         		var myQuestion = "<?php echo $questionType; ?>";
-        		alert(myQuestion);
+        		//alert(myQuestion);
         		//alert(document.TrueFalseForm.question3.value);
         		//function update_question(<?php echo $questionType; ?>);
 
