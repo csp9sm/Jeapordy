@@ -52,4 +52,6 @@
 		fclose($file);
 	}
 
+	session_destroy();
+
 ?>
