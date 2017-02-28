@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	header("Location:jeopardyForm.php");
 	$_SESSION['website'] = "write.php";
 	// /Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy/
@@ -52,6 +53,6 @@
 		fclose($file);
 	}
 
-	session_destroy();
+	//session_destroy();
 
 ?>
