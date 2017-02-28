@@ -39,18 +39,21 @@
 
         		//if((myQuestion== "shortanswer") && (document.shortAnswerForm.question1.value != "")){
         		if(myQuestion== "shortanswer"){
+        			document.getElementById("optionType").value="<?php echo $questionType; ?>";
         			document.getElementById("shortA").style.display ="block";
         			document.getElementById("multipleC").style.display ="none";
         			document.getElementById("trueFalse").style.display ="none";	
         		}
         		//if((myQuestion == "multiplechoice") && (document.multipleChoiceForm.question2.value != "")){
         		if(myQuestion== "multiplechoice"){
+        			document.getElementById("optionType").value="<?php echo $questionType; ?>";
         			document.getElementById("multipleC").style.display ="block";
         			document.getElementById("shortA").style.display ="none";
         			document.getElementById("trueFalse").style.display ="none";	
         		}
         		//if((myQuestion == "truefalse") && (document.TrueFalseForm.question3.value != "")){
         		if(myQuestion== "truefalse"){
+        			document.getElementById("optionType").value="<?php echo $questionType; ?>";
         			document.getElementById("trueFalse").style.display ="block";	
         			document.getElementById("multipleC").style.display ="none";
         			document.getElementById("shortA").style.display ="none";
@@ -76,7 +79,7 @@
 		<fieldset name="questionType" class="center">
 			<legend align="center" style="font-size: 18px;">Select the type of question to create:</legend>
 			<div id="selectType">
-				<select name="type"  onchange="update_question(this.value);">
+				<select name="type" id="optionType" onchange="update_question(this.value);">
 					<!--value = "<?php echo $questionType; ?>"-->
 					<option value="shortanswer">Short Answer</option>
 					<option value="multiplechoice">Multiple Choice</option>
