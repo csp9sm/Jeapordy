@@ -1,6 +1,21 @@
 <?php 
 	session_start();
-	$_SESSION['post-data'] = $_SESSION['post-data'];
+	if(isset($_SESSION['website'])){
+		$previous = $_SESSION['website'];
+	}
+
+	if($previous == "verification.php"){
+		$_SESSION['post-data'] = $_SESSION['post-data'];
+		$_SESSION['questionType']= $_SESSION['questionType'];
+		$questionType = $_SESSION['questionType2'];
+		echo $questionType;
+	}else{
+		$previous = "";
+		$questionType = "shortanswer";
+	}
+	$_SESSION['website'] = "jeopardyForm.php";
+
+	//response.setContentType("text/html; charset=UTF-8");
 	 // if(isset($_POST['textarea1'])){
   //       $_SESSION['textarea1'] = $_POST['textarea1'];
   //   }
@@ -13,9 +28,35 @@
         <title>Jeopardy</title> 
         <link rel=stylesheet href="main.css" type="text/css">
         <script type="text/javascript" src="main.js"></script>
+        <script type="text/javascript">
+        	function checkFields (){
+        		alert("check fields!");
+        		//alert(document.questionType.type.value);
+        		var myQuestion = "<?php echo $questionType; ?>";
+        		alert(myQuestion);
+        		//alert(document.TrueFalseForm.question3.value);
+        		//function update_question(<?php echo $questionType; ?>);
+        		if((myQuestion== "shortanswer") && (document.shortAnswerForm.question1.value != "")){
+        			document.getElementById("shortA").style.display ="block";
+        			document.getElementById("multipleC").style.display ="hidden";
+        			document.getElementById("trueFalse").style.display ="hidden";	
+        		}
+        		if((myQuestion == "multiplechoice") && (document.multipleChoiceForm.question2.value != "")){
+        			document.getElementById("multipleC").style.display ="block";
+        			document.getElementById("shortA").style.display ="hidden";
+        			document.getElementById("trueFalse").style.display ="hidden";	
+        		}
+        		if((myQuestion == "truefalse") && (document.TrueFalseForm.question3.value != "")){
+        			document.getElementById("trueFalse").style.display ="block";	
+        			document.getElementById("multipleC").style.display ="hidden";
+        			document.getElementById("shortA").style.display ="hidden";
+        		}
+        	}
+        </script>
 	</head>
 
-	<body>
+	<body onload="checkFields()">
+		<!-- onload="checkFields()";-->
 		<?php 
 			//This is to ensure that if the information passed from the verification is filled in the inputs.
 		?>
@@ -32,6 +73,7 @@
 			<legend align="center" style="font-size: 18px;">Select the type of question to create:</legend>
 			<div id="selectType">
 				<select name="type"  onchange="update_question(this.value);">
+					<!--value = "<?php echo $questionType; ?>"-->
 					<option value="shortanswer">Short Answer</option>
 					<option value="multiplechoice">Multiple Choice</option>
 					<option value="truefalse">True/False</option>
@@ -42,7 +84,7 @@
 			 
 			<form method="post" action="verification.php" name="shortAnswerForm" id="shortAnswerForm" onsubmit="return validateInput1()">
 				
-				<div id="shortA">	
+				<div id="shortA" style="display: none;">	
 					<table class="center">
 						<tr>
 							<td><label for="question1">Question: </label></td>
@@ -117,8 +159,8 @@
 		</fieldset>
 		<img class="imgbanner" src="images/podiums.png" alt="Podium"/>
 
-    <footer>Team: Cindy Park (csp9sm) and Sabina Yim (sjy8hy)</footer>
-</div>
+		<footer>Team: Cindy Park (csp9sm) and Sabina Yim (sjy8hy)</footer>
+	</div>
 
 	</body>
 </html>

@@ -1,6 +1,8 @@
 <?php
 	session_start();
+	$_SESSION['website'] = "verification.php";
 	$_SESSION['questionType']="";
+	$_SESSION['questionType2']="";
 	$_SESSION['Question']="";
 	$_SESSION['Answer'] = array();
 	$_SESSION['post-data'] = $_POST;
@@ -14,6 +16,7 @@
 			// echo $_SESSION['post-data'][$i]; 
 			if($key == 'question2') {
 				$_SESSION['questionType']="Multiple Choice";
+				$_SESSION['questionType2']="multiplechoice";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer']['A:'] = $_SESSION['post-data']['multipleChoice1']; 
 				$_SESSION['Answer']['B:'] = $_SESSION['post-data']['multipleChoice2']; 
@@ -23,11 +26,13 @@
 			}
 			if($key == 'question1'){
 				$_SESSION['questionType']="Short Answer";
+				$_SESSION['questionType2']="shortanswer";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer'][''] = $_SESSION['post-data']['shortAnswer'];
 			}	
 			if($key == 'question3'){
 				$_SESSION['questionType']="True and False";
+				$_SESSION['questionType2']="truefalse";
 				$_SESSION['Question'] = $_SESSION['post-data'][$key];
 				$_SESSION['Answer'][''] = $_SESSION['post-data']['tfAnswer'];
 			}	

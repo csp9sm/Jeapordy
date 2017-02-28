@@ -1,5 +1,7 @@
 <?php
-	header("Location:/cs4640/project/Jeopardy/jeopardyForm.php");
+	header("Location:jeopardyForm.php");
+	// /Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy/
+	// in public_html, have to change to "jeopardyForm.php"
 	//should redirect to form page
 	
 	// session_start();
@@ -12,6 +14,7 @@
 	$answerType = "";
 	$question = "";
 	$answerArray = array();
+
 
 	if(isset($_POST['typeToWrite']) != 0){
 		$answerType = $_POST['typeToWrite'];
@@ -37,8 +40,11 @@
 		$str .= $value."\n";
 	}
 	$str .= "\n";
-	$filename = "/Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy/data/data.txt";
+	$filename = "data/data.txt";
+	// /Applications/XAMPP/xamppfiles/htdocs/cs4640/project/Jeopardy
+	// in public_html have to use filename "/data/data.txt"
 			// chmod($filename, 775);
+
 	if (!empty($str)) {
 		$file = fopen($filename, "a");
 		fputs($file, $str);
