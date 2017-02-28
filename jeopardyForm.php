@@ -33,7 +33,7 @@
         		//alert("check fields!");
         		//alert(document.questionType.type.value);
         		var myQuestion = "<?php echo $questionType; ?>";
-        		//alert(myQuestion);
+        		alert(myQuestion);
         		//alert(document.TrueFalseForm.question3.value);
         		//function update_question(<?php echo $questionType; ?>);
 
@@ -76,7 +76,7 @@
 		<fieldset name="questionType" class="center">
 			<legend align="center" style="font-size: 18px;">Select the type of question to create:</legend>
 			<div id="selectType">
-				<select name="type"  onchange="update_question(this.value);" value="<?php echo $questionType ?>">
+				<select name="type"  onchange="update_question(this.value);">
 					<!--value = "<?php echo $questionType; ?>"-->
 					<option value="shortanswer">Short Answer</option>
 					<option value="multiplechoice">Multiple Choice</option>
